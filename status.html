@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>biac system monitor</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+    <link rel="stylesheet" href="stylesheets/biac.css">
+        
+        
+    <!-- JS
+  ================================================== -->
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/biac.js"></script>
+
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="images/favicon.png">
+
+</head>
+<body>
+
+
+
+	<!-- Primary Page Layout
+	================================================== -->
+	<div class="container">
+		
+        <div class="sixteen columns">
+			<h1 class="remove-bottom">BIAC Monitor</h1>
+			<h5>Version 3.0</h5>
+            <h5 id="curr_time"></h5>
+			<hr class="remove-bottom"/>
+		</div>
+
+        <div class="six columns" style="height:150px;min-width:340px;">
+            <h5 class="machine-label">biac6.dhe.duke.edu</h5>
+            <div class="bar empty" id="data"><span class="disk-label"></span></div>
+            <div id="main" class="circle empty"></div>
+            <div id="p_copy" class="circle empty"></div>
+            <div id="p_recon" class="circle empty"></div>
+            <div id="dcm_proc" class="circle empty"></div>
+            <div id="biacscp" class="circle empty"></div>
+		</div>
+        
+        <div class="six columns" style="height:150px;min-width:340px;">
+            <h5 class="machine-label">biac6-mr.dhe.duke.edu</h5>
+            <div class="bar empty" id="home"><span class="disk-label"></span></div>
+            <div class="bar empty" id="mrraw"><span class="disk-label"></span></div>
+            <div class="bar empty" id="root"><span class="disk-label"></span></div>
+            <div class="bar empty" id="failover"><span class="disk-label"></span></div>
+            <div class="spacer"></div>
+            <a href="#" data-suiteid="bia6" class="scanner-button">exams</a>
+            <a href="#" data-suiteid="bia6" class="scanner-button">dcm</a>
+            <a href="#" data-suiteid="bia6" class="scanner-button">history</a>
+
+		</div>
+
+        <div class="six columns" style="height:150px;min-width:340px;">
+            <h5 class="machine-label">biac5.dhe.duke.edu</h5>
+            <div class="bar empty" id="data"><span class="disk-label"></span></div>
+            <div id="main" class="circle empty"></div>
+            <div id="p_copy" class="circle empty"></div>
+            <div id="p_recon" class="circle empty"></div>
+            <div id="dcm_proc" class="circle empty"></div>
+            <div id="biacscp" class="circle empty"></div>
+        </div>
+
+        <div class="six columns" style="height:150px;min-width:340px;">
+            <h5 class="machine-label">biac5-mr.dhe.duke.edu</h5>
+            <div class="bar empty" id="home"><span class="disk-label"></span></div>
+            <div class="bar empty" id="mrraw"><span class="disk-label"></span></div>
+            <div class="bar empty" id="root"><span class="disk-label"></span></div>
+            <div class="bar empty" id="failover"><span class="disk-label"></span></div>
+            <div class="spacer"></div>
+            <a href="#" data-suiteid="bia5" class="scanner-button">exams</a>
+            <a href="#" data-suiteid="bia5" class="scanner-button">dcm</a>
+            <a href="#" data-suiteid="bia5" class="scanner-button">history</a>
+        </div>
+
+
+        <div class="six columns" style="height:150px;min-width:340px;">
+            <h5 class="machine-label">dicom.biac.duke.edu</h5>
+            <div class="bar empty" id="data"><span class="disk-label"></span></div>
+            <div id="main" class="circle empty"></div>
+            <div id="p_copy" class="circle empty"></div>
+            <div id="p_recon" class="circle empty"></div>
+            <div id="dcm_proc" class="circle empty"></div>
+            <div id="biacscp" class="circle empty"></div>
+        </div>
+
+        <div id="exambrowser">
+            <div>
+                <img src="images/close.png" id="close" title="Close Window" alt="Close"/>
+            </div>
+            <div id="searchrange">
+                <form id="searchform" style="display:inline-block;" action="">
+                    <input name="sc" style="display:none;" />
+                    <label>Limit: <input name="timeLimit" id="timeLimit" style="width:63px;" type="number"/></label>
+                    <select name="timeType" id="timeType">
+          				<option selected="selected" value="">Select one...</option>
+                        <option value="DAY">day</option>
+          				<option value="WEEK">week</option>
+          				<option value="MONTH">month</option>
+          				<option value="YEAR">year</option>
+                    </select>
+                    <div id="mybutton" class="scanner-button">search</div>
+                </form>
+                
+            </div>
+            <div id="results" />
+        </div>
+
+
+
+    </div><!-- container -->
+
+
+<!-- End Document
+================================================== -->
+</body>
+</html>

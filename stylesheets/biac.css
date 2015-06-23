@@ -1,0 +1,232 @@
+body {
+    font: sans-serif;
+}
+
+h1,h2,h3,h4,h5 {
+    color: #34495E;
+}
+
+/* list styles */
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin: 5px;
+    float: left;
+}
+
+/* circle for processes */
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display:inline-block;
+    vertical-align: bottom;
+}
+
+/* default colors */
+.red {
+    background: #e74c3c;
+}
+
+.green {
+    background: #2ecc71;
+}
+
+.yellow {
+    background: #f1c40f;
+}
+
+.blue {
+    background: skyblue;
+}
+
+.empty {
+    background: #bdc3c7;
+}
+
+/* name of machine */
+.machine-label {
+    font: 1.4em sans-serif;
+    position:absolute;
+    right:30px;
+    top:30px;
+    opacity:0.5;
+    filter: alpha(opacity=50);
+}
+
+/* collapsable columns */
+.columns {
+    margin: 20px;
+    padding-bottom: 20px;
+    position:relative;
+}
+
+.columns::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+}
+
+/* bar used for disks */
+.bar {
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 10px;
+  width: 15px;
+  height: 50%;
+  margin: 0px 5px 0px 5px;
+  -webkit-transition: height 0.5s ease-out;
+  transition: height 0.5s ease-out;
+}
+
+.bar, .circle { cursor: pointer; }
+
+/* html button triggers */
+.scanner-button {
+    padding: 5px;
+    border-radius: 5px;
+    color:white;
+    background: #34495E;
+    text-decoration: none;
+    transition: 0.5s ease-out;    
+    -webkit-transition: 0.5s ease-out;
+}
+
+.scanner-button:hover {
+    background: #658db4;
+}
+
+.scanner-button:visited {
+    color:white;
+}
+
+#exambrowser {
+	display:none;
+	z-index:99999;
+	height: 360px;
+	width: 725px;
+
+	position: fixed;
+	top: 20%; left: 15%;
+	float: left;
+
+	background: rgb(255,255,255);
+	background: rgba(255,255,255,.9);
+	border: 1px solid rgb(0,0,0);
+	padding:10px;	
+	border-radius:15px;
+}
+
+#searchrange { display:none; }
+
+#examTable { 
+	margin: 0px 0px 0px 110px; 
+	display: block;
+	overflow-y:auto;
+}
+
+#transTable { 
+	overflow-y:auto;
+	overflow-z:hidden;
+ }
+
+#linkbox { 	
+	position: absolute;
+	top: 5%;
+	right: 5%;
+ }
+
+#exams { 
+	text-align: center;
+	background: white;
+	padding:2px 10px 2px 10px;
+	cursor:pointer;
+	overflow-y: auto;
+	display: block;
+	float: left;
+	border-radius:5px;
+}
+
+
+th {
+	background-color : #34495E;
+	color: white;
+	padding: 2px 5px;
+    text-transform:lowercase;
+}
+
+td { text-align:center; padding: 1px 5px; }
+#transTable table, #examTable table { width:100%; }
+#examTable td, #transTable td { background-color:white; color: black; border-bottom:1px #bdc3c7 solid; }
+#examTable td.error,#transTable td.error  { background-color:rgb(231,76,60); background-color:rgba(231,76,60,0.4); }
+#examTable td.current,#transTable td.current { background-color:rgb(46,204,113); background-color:rgba(46,204,113,0.2); }
+
+.thisexam {
+    font-weight: bold;
+    cursor:pointer;
+}
+
+
+#close {
+	width: 35px;
+	float: left;
+	margin: -30px 0px 0px -25px;
+	border: none;
+	cursor: pointer;
+}
+
+#results, #transTable {
+	height: 350px;
+	width: 720px;
+	overflow-y:auto;
+	overflow-z:hidden;
+ }
+
+.spacer {
+    display:inline-block;
+    min-width:15%;
+    overflow:hidden;
+}
+
+span.disk-label {
+    position:absolute;
+    bottom:-10px;
+    font-size:.8em;
+}
+
+.tooltip {
+    display: inline;
+    position: relative;
+}
+
+.tooltip:after {
+    background: #111;
+    background: rgba(0,0,0,.8);
+    border-radius: .5em;
+    bottom: 1.35em;
+    color: #fff;
+    content: attr(title);
+    display: block;
+    /*left: 1em;*/
+    padding: .3em 1em;
+    position: absolute;
+    text-shadow: 0 1px 0 #000;
+    white-space: nowrap;
+    z-index: 98;
+}
+
+.tooltip:before {
+    border: solid;
+    border-color: #111 transparent;
+    border-color: rgba(0,0,0,.8) transparent;
+    border-width: .4em .4em 0 .4em;
+    bottom: 1em;
+    content: "";
+    display: block;
+    left: 1em;
+    position: absolute;
+    z-index: 99;
+}
+
