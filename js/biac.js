@@ -25,9 +25,9 @@ function check_stat() {
                 if ( up_delay <= stat_timeout && up_delay >= 0 ){
                 /*XXX add more cases */
                     if  (results.data[host][s]['started']){
-                        if (results.data[host][s]['running'] && !$(thisstat).hasClass("green")){
+                        if (results.data[host][s]['running']=="t" && !$(thisstat).hasClass("green")){
                             $(thisstat).attr('class','circle green');
-                        } else if (!results.data[host][s]['running'] && !$(thisstat).hasClass("red")){
+                        } else if (results.data[host][s]['running']=="f" && !$(thisstat).hasClass("red")){
                             $(thisstat).attr('class','circle red');
                         }
                     }
