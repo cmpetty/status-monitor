@@ -6,11 +6,11 @@ include_once 'DatabaseBean.php';
 if (!defined("_DB_NAME_"))
   define ('_DB_NAME_','BIAC3');
 if (!defined("_DB_USER_"))
-  define ('_DB_USER_','webuser');
+  define ('_DB_USER_','mydbuser');
 if (!defined("_DB_HOST_"))
   define ('_DB_HOST_','localhost');
 if (!defined("_DB_PASS_"))
-  define ('_DB_PASS_','popd94!');
+  define ('_DB_PASS_','mydbpass');
 if (!defined("_DB_PORT_"))
   define ('_DB_PORT_','5432');
 
